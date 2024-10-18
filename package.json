@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon src/server/main.ts -w src/server",
     "build": "vite build",
-    "start": "NODE_ENV=production ts-node src/server/main.ts",
+    "start": "NODE_ENV=production ts-node --transpile-only src/server/main.ts",
     "format": "prettier .  --write",
     "tsc": "tsc"
   },
