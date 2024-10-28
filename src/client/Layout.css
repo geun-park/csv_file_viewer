@@ -1,3 +1,24 @@
+:root {
+  --spacing: 0.25rem;
+  --border-color: #a0a0a0;
+}
+
+/* Style for definition list */
+dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 1.42857143;
+}
+dt {
+  font-weight: 700;
+}
+dd {
+  margin-left: 0;
+}
+
 body h1,
 body h2 {
   margin-bottom: 0;
@@ -5,6 +26,10 @@ body h2 {
 
 nav {
   border-bottom: 1px solid var(--border-color);
+}
+
+article {
+  width: 400px;
 }
 
 body main {
@@ -27,3 +52,71 @@ body main {
     }
   }
 }
+
+
+/* Set a fixed scrollable wrapper */
+#table-content {
+  max-height: 400px;
+  overflow: auto;
+  /* Set header to stick to the top of the container. */
+  & thead tr th {
+    position: sticky;
+    top: 0;
+  }
+  /* If we use border, we must use table-collapse to avoid a slight movement of the header row */
+  & table {
+    border-collapse: collapse;
+    border-top: 0;
+  }
+  /* Because we must set sticky on th, we have to apply background styles here rather than on thead */
+  & th {
+    border-left: 1px dotted rgba(200, 209, 224, 0.6);
+    border-bottom: 1px solid #ddd;
+
+    background: #eee;
+    text-align: left;
+    box-shadow: 0px 0px 0 2px #e8e8e8;
+
+    &.active {
+      background: #ddd;
+    }
+
+    &.sortable::after {
+      font-family: FontAwesome;
+      content: "\f0dc";
+      position: absolute;
+      right: 8px;
+      color: #999;
+    }
+
+    &.active::after {
+      position: absolute;
+      right: 8px;
+      color: #999;
+    }
+
+    &.active.asc::after {
+      font-family: FontAwesome;
+      content: "\f0d8";
+    }
+
+    &.active.desc::after {
+      font-family: FontAwesome;
+      content: "\f0d7";
+    }
+  }
+}
+
+
+/* Added CSS */
+/* Style for Data info list */
+.file-info-card {
+  & .file-info-card__item {
+    list-style: none;
+  }
+  
+  & .file-info-card__label {
+    font-weight: bold;
+  }
+}
+
