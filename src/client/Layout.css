@@ -1,6 +1,6 @@
 :root {
   --spacing: 0.25rem;
-  --border-color: #a0a0a0;
+  --border-color: #7b8495;
 }
 
 /* Style for definition list */
@@ -25,11 +25,11 @@ body h2 {
 }
 
 nav {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 0.1875rem solid #202632;
 }
 
 article {
-  width: 400px;
+  width: 900px;
 }
 
 body main {
@@ -43,14 +43,6 @@ body main {
   align-items: start;
   gap: var(--spacing);
 
-  & article {
-    margin: 0;
-    padding: var(--spacing);
-    & > header {
-      margin: calc(var(--spacing) * -1) calc(var(--spacing) * -1) var(--spacing);
-      padding: var(--spacing);
-    }
-  }
 }
 
 
@@ -63,22 +55,17 @@ body main {
     position: sticky;
     top: 0;
   }
-  /* If we use border, we must use table-collapse to avoid a slight movement of the header row */
-  & table {
-    border-collapse: collapse;
-    border-top: 0;
-  }
+  
   /* Because we must set sticky on th, we have to apply background styles here rather than on thead */
   & th {
-    border-left: 1px dotted rgba(200, 209, 224, 0.6);
-    border-bottom: 1px solid #ddd;
+    border-left: dotted #202632;
+    border-bottom: solid #202632;
 
-    background: #eee;
+  
     text-align: left;
-    box-shadow: 0px 0px 0 2px #e8e8e8;
 
     &.active {
-      background: #ddd;
+      background: #7b8495;
     }
 
     &.sortable::after {
@@ -111,12 +98,6 @@ body main {
 /* Added CSS */
 /* Style for Data info list */
 .file-info-card {
-  & .file-info-card__item {
-    list-style: none;
-  }
-  
-  & .file-info-card__label {
-    font-weight: bold;
-  }
+  width: 1200px;
 }
 
